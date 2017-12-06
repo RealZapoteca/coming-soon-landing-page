@@ -25,7 +25,7 @@
     "watch": "latest"
   },
   "scripts": {
-    "clean": "rd dist/ /S /Q",
+    "clean": "RD /S /Q dist/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
     "images": "imagemin-power src/images --out-dir=dist/img -p",
     "prebuild": "npm run clean && mkdir dist\\css dist\\js dist\\img",
