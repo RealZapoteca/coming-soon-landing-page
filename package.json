@@ -21,7 +21,7 @@
     "watch": "latest"
   },
   "scripts": {
-    "clean": "rd dist/ -s -q",
+    "clean": "rd dist/ /S /Q",
     "lint": "jshint src/scripts",
     "images": "imagemin-power src/images --out-dir=dist/img -p",
     "prebuild": "npm run clean && mkdir dist\\css dist\\js dist\\img",
