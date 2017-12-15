@@ -192,11 +192,13 @@ a {
 
 	&::before {
 		content: "";
+		height: 34px;
 		height: 3.4rem;
+		width: 34px;
 		width: 3.4rem;
 		border-radius: 50%;
 		opacity: 0;
-		background: $neutral;
+		background: $backgroundColor;
 		display: block;
 		position: absolute;
 		transform: scale(0);
