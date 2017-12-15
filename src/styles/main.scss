@@ -138,53 +138,32 @@ a {
 		border-color: currentColor;
 	}
 
-	.facebook:hover,
-	.facebook:active {
-		svg {
-			background-color: #4267b2;
-		}
+	.facebook::before {
+		background-color: #4267b2;
 	}
 	
-	.twitter:hover,
-	.twitter:active {
-		svg {
-			background-color: #1da1f2;
-		}
+	.twitter::before {
+		background-color: #1da1f2;
 	}
 	
-	.instagram:hover,
-	.instagram:active {
-		svg {
-			background-color: #d93175;
-		}
+	.instagram::before {
+		background-color: #d93175;
 	}
 	
-	.pinterest:hover,
-	.pinterest:active {
-		svg {
-			background-color: #bd081c;
-		}
+	.pinterest::before {
+		background-color: #bd081c;
 	}
 	
-	.snapchat:hover,
-	.snapchat:active {
-		svg {
-			background-color: #efff00;
-		}
+	.snapchat::before {
+		background-color: #efff00;
 	}
 	
-	.googleplus:hover,
-	.googleplus:active {
-		svg {
-			background-color: #dd4e42;
-		}
+	.googleplus::before {
+		background-color: #dd4e42;
 	}
 	
-	.linkedin:hover,
-	.linkedin:active {
-		svg {
-			background-color: #0077b5;
-		}
+	.linkedin::before {
+		background-color: #0077b5;
 	}
 
 	@media #{$media} and ($m-w: $tablet) {
@@ -211,7 +190,27 @@ a {
 		transition: 0.3s all ease;
 	}
 
-	&:hover {
+	&::before {
+		content: "";
+		height: 3.4rem;
+		width: 3.4rem;
+		border-radius: 50%;
+		opacity: 0;
+		background: $neutral;
+		display: block;
+		position: absolute;
+		transform: scale(0);
+		transition: .2s transform ease-in-out,.2s border-radius .2s ease-in-out, .4s opacity ease-in-out;
+	}
+
+	&:hover,
+	&:active {
+		&::before {
+			transform: scale(1);
+			border-radius: 4px;
+			opacity: 1;
+		}
+
 		svg {
 			fill: #eee;
 		}
