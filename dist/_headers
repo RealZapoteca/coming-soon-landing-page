@@ -1,0 +1,2 @@
+/server-push-path
+    Link: </js/main.min.js>; rel=preload; as=script, </css/main.min.css>; rel=preload; as=style, <https://fonts.gstatic.com>; rel=preconnect
