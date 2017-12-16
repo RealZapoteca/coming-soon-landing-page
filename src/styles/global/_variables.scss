@@ -1,6 +1,6 @@
 $backgroundColor: #292929; // HSL 220 69 45 -> #091a12
 $bg: #57c123;
-$backgroundColorOverlay: lighten(desaturate(adjust-hue($bg, 2deg), 15%), 32%); // #a3b7e4 222 55 77
+$backgroundColorOverlay: lighten(desaturate(adjust-hue($bg, 8deg), 32%), 3%); // #a3b7e4 222 55 77
 // $backgroundColorOverlay: #a4b7e4; // HSL 222 54 77
 $backgroundColorMirror: desaturate(darken(adjust-hue($backgroundColorOverlay, 16deg), 4.6%), 32%); // #a8a9c8 238 23 72
 $textColor: #fff;

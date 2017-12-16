@@ -52,7 +52,8 @@ a {
 
 /* Page Loader */
 
-.js body::before {
+.js {
+	body::before {
 	content: 'Loading...';
 	font-family: $header-font;
 	letter-spacing: 0.2em;
@@ -72,10 +73,10 @@ a {
 	z-index: 1000;
 	pointer-events: none;
 	transition: transform 0.5s;
-}
 
-.js .loading::before {
-	transform: translate3d(0,100%,0);
+	.loading::before {
+		transform: translate3d(0,100%,0);
+	}
 }
 
 /* Header */
