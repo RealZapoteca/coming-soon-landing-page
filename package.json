@@ -21,19 +21,20 @@
     "node-sass": "latest",
     "postcss": "latest",
     "postcss-cli": "latest",
+    "svgo": "latest",
     "uglify-js": "latest",
     "watch": "latest"
   },
   "scripts": {
     "clean": "RD /S /Q dist/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
-    "images": "imagemin-power src/images --out-dir=dist/img -p",
+    "images": "svgo -q --multipass -f src/images/ -o dist/img/",
     "prebuild": "npm run clean && mkdir dist\\css dist\\js dist\\img",
     "prebuild:css": "node-sass -r -o dist/css --output-style expanded --indent-type tab --indent-width 1 --source-map true --source-map-contents src/styles",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
     "prebuild:js": "npm run lint",
     "build:js": "browserify src/scripts/index.js > dist/js/main.js && uglifyjs dist/js/main.js -o dist/js/main.min.js -c -m",
-    "build": "npm run build:css && npm run build:js && cp src/index.html dist/index.html",
+    "build": "npm run build:css && npm run build:js && images && cp src/index.html dist/index.html",
     "build:watch": "watch 'npm run build' .",
     "test": "mocha test/"
   },
