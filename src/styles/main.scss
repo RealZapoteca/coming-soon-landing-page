@@ -94,6 +94,7 @@ a {
 	z-index: 100;
 
 	@media #{$media} and ($m-w: $tablet) {
+		justify-content: space-between; // IE 11 fix
 		justify-content: space-evenly;
 	}
 }
@@ -115,17 +116,17 @@ a {
 	text-align: center;
 	white-space: nowrap;
 	font-size: 0.85em;
-}
 
-.codrops-links::after {
-	content: '';
-	height: 100%;
-	width: 1px;
-	background: currentColor;
-	position: absolute;
-	transform: rotate(22.5deg);
-	left: 50%;
-	top: 0;
+	&::after {
+		content: '';
+		height: 100%;
+		width: 1px;
+		background: currentColor;
+		position: absolute;
+		transform: rotate(22.5deg);
+		left: 50%;
+		top: 0;
+	}
 }
 
 .codrops-icon {
