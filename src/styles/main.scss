@@ -116,17 +116,6 @@ a {
 	text-align: center;
 	white-space: nowrap;
 	font-size: 0.85em;
-
-	&::after {
-		content: '';
-		height: 100%;
-		width: 1px;
-		background: currentColor;
-		position: absolute;
-		transform: rotate(22.5deg);
-		left: 50%;
-		top: 0;
-	}
 }
 
 .codrops-icon {
