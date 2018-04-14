@@ -439,10 +439,15 @@ template {
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	color: #909090;
 	background: #111;
+	font-size: 1.6em;
 }
 
 a {
@@ -495,7 +500,7 @@ a:hover, a:focus {
 	transition: transform 0.5s;
 }
 
-.js .loading::before {
+.js body::before.loading::before {
 	transform: translate3d(0, 100%, 0);
 }
 
@@ -514,6 +519,7 @@ a:hover, a:focus {
 
 @media screen and (min-width: 50em) {
 	.codrops-header {
+		justify-content: space-between;
 		justify-content: space-evenly;
 	}
 }
@@ -562,6 +568,34 @@ a:hover, a:focus {
 	border-color: currentColor;
 }
 
+.demos .facebook::before {
+	background-color: #4267b2;
+}
+
+.demos .twitter::before {
+	background-color: #1da1f2;
+}
+
+.demos .instagram::before {
+	background-color: #d93175;
+}
+
+.demos .pinterest::before {
+	background-color: #bd081c;
+}
+
+.demos .snapchat::before {
+	background-color: #efff00;
+}
+
+.demos .googleplus::before {
+	background-color: #dd4e42;
+}
+
+.demos .linkedin::before {
+	background-color: #0077b5;
+}
+
 @media screen and (min-width: 50em) {
 	.demos {
 		width: auto;
@@ -570,9 +604,48 @@ a:hover, a:focus {
 }
 
 .demo {
-	margin: 0 1em 0.5em 0;
-	padding: 0 0 0.25em;
-	border-bottom: 2px solid transparent;
+	margin: 0.5em 0 0 0;
+	padding: 0;
+	display: inline-block;
+	position: relative;
+	height: 44px;
+	height: 4.4rem;
+	width: 44px;
+	width: 4.4rem;
+	fill: #fff;
+}
+
+.demo svg {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+	transition: 0.3s all ease;
+}
+
+.demo::before {
+	content: "";
+	height: 44px;
+	height: 4.4rem;
+	width: 44px;
+	width: 4.4rem;
+	border-radius: 50%;
+	opacity: 0;
+	background: #292929;
+	display: block;
+	position: absolute;
+	transform: scale(0);
+	transition: .2s transform ease-in-out,.2s border-radius .2s ease-in-out, .4s opacity ease-in-out;
+}
+
+.demo:hover::before, .demo:active::before {
+	transform: scale(1);
+	border-radius: 4px;
+	opacity: 1;
+}
+
+.demo:hover svg, .demo:active svg {
+	fill: #eee;
 }
 
 /* Content */
@@ -830,7 +903,7 @@ a:hover, a:focus {
 	right: 0;
 	width: 50%;
 	height: 100%;
-	background: #a9c8a8 url(../img/bg.jpg);
+	background: #687469 url(../img/bg.jpg);
 	background-size: cover;
 }
 
@@ -865,12 +938,12 @@ a:hover, a:focus {
 }
 
 .demo-3 {
-	background: #111;
+	background: #292929;
 	color: #fff;
 }
 
 .js body.demo-3::before {
-	background: #b6e4a3;
+	background: #5ea74c;
 	color: #fff;
 }
 
