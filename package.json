@@ -26,7 +26,7 @@
     "watch": "latest"
   },
   "scripts": {
-    "clean": "RD /S /Q dist/ || echo 'Something went wrong'",
+    "clean": "rm -rf 'dist\\css\\' & rm -rf 'dist\\js\\' & rm -rf 'dist\\img\\' || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
     "images": "svgo -q --multipass -f src/images/ -o dist/img/",
     "prebuild": "npm run clean && mkdir dist\\css dist\\js dist\\img",
