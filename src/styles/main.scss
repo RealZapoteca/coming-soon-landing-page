@@ -74,6 +74,7 @@ a {
 			z-index: 1000;
 			pointer-events: none;
 			transition: transform 0.5s;
+		}
 
 		&.loading::before {
 			transform: translate3d(0,100%,0);
