@@ -34,7 +34,7 @@
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
     "prebuild:js": "npm run lint",
     "build:js": "browserify src/scripts/index.js > dist/js/main.js && uglifyjs dist/js/main.js -o dist/js/main.min.js -c -m",
-    "build": "npm run build:css && npm run build:js && images && cp src/index.html dist/index.html",
+    "build": "npm run build:css && npm run build:js && npm run images && cp src/index.html dist/index.html",
     "build:watch": "watch 'npm run build' .",
     "test": "mocha test/"
   },

@@ -541,17 +541,6 @@ a:hover, a:focus {
 	font-size: 0.85em;
 }
 
-.codrops-links::after {
-	content: '';
-	height: 100%;
-	width: 1px;
-	background: currentColor;
-	position: absolute;
-	transform: rotate(22.5deg);
-	left: 50%;
-	top: 0;
-}
-
 .codrops-icon {
 	pointer-events: visible;
 	display: inline-block;
