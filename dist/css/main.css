@@ -500,7 +500,7 @@ a:hover, a:focus {
 	transition: transform 0.5s;
 }
 
-.js body::before.loading::before {
+.js body.loading::before {
 	transform: translate3d(0, 100%, 0);
 }
 
@@ -545,6 +545,7 @@ a:hover, a:focus {
 	pointer-events: visible;
 	display: inline-block;
 	padding: 0.6em;
+	width: 44px;
 }
 
 /* Demo links */
