@@ -545,6 +545,9 @@ a:hover, a:focus {
 	pointer-events: visible;
 	display: inline-block;
 	padding: 0.6em;
+}
+
+.codrops-icon img {
 	width: 44px;
 }
 

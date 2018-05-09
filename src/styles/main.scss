@@ -124,7 +124,10 @@ a {
 	pointer-events: visible;
 	display: inline-block;
 	padding: 0.6em;
-	width: 44px;
+
+	img {
+		width: 44px;
+	}
 }
 
 
