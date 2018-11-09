@@ -5,3 +5,5 @@
   Real Zapoteca
   <br>
 </h1>
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?label=Follow&style=social)](https://twitter.com/RealZapoteca)
+[![Website realzapoteca.com](https://img.shields.io/website-up-down-green-red/https/naereen.github.io.svg)](https://naereen.github.io/)
