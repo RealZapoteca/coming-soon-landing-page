@@ -22,8 +22,9 @@
     "postcss": "latest",
     "postcss-cli": "latest",
     "svgo": "latest",
+    "ts-node": "latest",
     "uglify-js": "latest",
-    "watch": "latest"
+    "watch": "^1.0.2"
   },
   "scripts": {
     "clean": "[ -d 'dist/' ] && rm -rf dist/css/ & rm -rf dist/js/ & rm -rf dist/img/ || echo 'Something went wrong'",
