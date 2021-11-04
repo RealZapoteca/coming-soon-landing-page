@@ -1,6 +1,6 @@
 {
   "name": "realzapoteca",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Primary landing page for Real Zapoteca",
   "main": "index.js",
   "repository": {
@@ -26,10 +26,10 @@
     "watch": "latest"
   },
   "scripts": {
-    "clean": "rm -rf 'dist\\css\\' & rm -rf 'dist\\js\\' & rm -rf 'dist\\img\\' || echo 'Something went wrong'",
+    "clean": "[ -d 'dist/' ] && rm -rf dist/css/ & rm -rf dist/js/ & rm -rf dist/img/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
-    "images": "svgo -q --multipass -f src/images/ -o dist/img/",
-    "prebuild": "npm run clean && mkdir dist\\css dist\\js dist\\img",
+    "images": "svgo -q --multipass -f src/images/ -o dist/img/ | cp {src/images/*.png,src/images/*.jpg} dist/img/",
+    "prebuild": "npm run clean && mkdir dist/css dist/js dist/img",
     "prebuild:css": "node-sass -r -o dist/css --output-style expanded --indent-type tab --indent-width 1 --source-map true --source-map-contents src/styles",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
     "prebuild:js": "npm run lint",
