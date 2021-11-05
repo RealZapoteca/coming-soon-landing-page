@@ -144,27 +144,27 @@ a {
 	.facebook::before {
 		background-color: #4267b2;
 	}
-	
+
 	.twitter::before {
 		background-color: #1da1f2;
 	}
-	
+
 	.instagram::before {
 		background-color: #d93175;
 	}
-	
+
 	.pinterest::before {
 		background-color: #bd081c;
 	}
-	
+
 	.snapchat::before {
 		background-color: #efff00;
 	}
-	
+
 	.googleplus::before {
 		background-color: #dd4e42;
 	}
-	
+
 	.linkedin::before {
 		background-color: #0077b5;
 	}
@@ -558,7 +558,7 @@ a {
         color: $linkColor;
         text-transform: uppercase;
 		font-size: 2em;
-		
+
 		@media #{$media} and ($m-w: $tablet) {
 			font-size: 7em;
 		}
