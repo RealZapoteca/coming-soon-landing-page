@@ -31,7 +31,7 @@
     "lint": "jshint src/scripts",
     "images": "svgo -q --multipass -f src/images/ -o dist/img/ | cp {src/images/*.png,src/images/*.jpg} dist/img/",
     "prebuild": "npm run clean && mkdir dist/css dist/js dist/img",
-    "prebuild:css": "sass src/styles:dist/css --style=expanded --charset --source-map --embed-sources",
+    "prebuild:css": "sass src/styles:dist/css --style expanded --charset --source-map --embed-sources",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
     "prebuild:js": "npm run lint",
     "build:js": "browserify src/scripts/index.js > dist/js/main.js && uglifyjs dist/js/main.js -o dist/js/main.min.js -c -m",
