@@ -18,20 +18,20 @@
     "cssnano": "latest",
     "jshint": "latest",
     "mocha": "latest",
-    "node-sass": "latest",
     "postcss": "latest",
     "postcss-cli": "latest",
+    "sass": "latest",
     "svgo": "latest",
     "ts-node": "latest",
     "uglify-js": "latest",
-    "watch": "^1.0.2"
+    "watch": "^0.13.0"
   },
   "scripts": {
     "clean": "[ -d 'dist/' ] && rm -rf dist/css/ & rm -rf dist/js/ & rm -rf dist/img/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
     "images": "svgo -q --multipass -f src/images/ -o dist/img/ | cp {src/images/*.png,src/images/*.jpg} dist/img/",
     "prebuild": "npm run clean && mkdir dist/css dist/js dist/img",
-    "prebuild:css": "node-sass -r -o dist/css --output-style expanded --indent-type tab --indent-width 1 --source-map true --source-map-contents src/styles",
+    "prebuild:css": "sass src/styles:dist/css --style=expanded --charset --source-map --embed-sources",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
     "prebuild:js": "npm run lint",
     "build:js": "browserify src/scripts/index.js > dist/js/main.js && uglifyjs dist/js/main.js -o dist/js/main.min.js -c -m",
