@@ -15,6 +15,7 @@
   "devDependencies": {
     "autoprefixer": "latest",
     "browserify": "latest",
+    "copyfiles": "^2.4.1",
     "cssnano": "latest",
     "jshint": "latest",
     "mocha": "latest",
@@ -29,7 +30,7 @@
   "scripts": {
     "clean": "[ -d 'dist/' ] && rm -rf dist/css/ && rm -rf dist/js/ && rm -rf dist/img/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
-    "images": "svgo -q --multipass -f src/images/ -o dist/img/ && find src/images/ -type f -iname \( '*.png' -o -iname '*.jpg' \) -exec cp {} dist/img/ \;",
+    "images": "svgo -q --multipass -f src/images/ -o dist/img/ && copyfiles -f src/images/*.png src/images/*.jpg dist/img/",
     "prebuild": "npm run clean && mkdir dist/css dist/js dist/img",
     "prebuild:css": "sass src/styles:dist/css --style=expanded --charset --source-map --embed-sources",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
