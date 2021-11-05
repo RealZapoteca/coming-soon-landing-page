@@ -27,9 +27,9 @@
     "watch": "^0.13.0"
   },
   "scripts": {
-    "clean": "[ -d 'dist/' ] && rm -rf dist/css/ & rm -rf dist/js/ & rm -rf dist/img/ || echo 'Something went wrong'",
+    "clean": "[ -d 'dist/' ] && rm -rf dist/css/ && rm -rf dist/js/ && rm -rf dist/img/ || echo 'Something went wrong'",
     "lint": "jshint src/scripts",
-    "images": "svgo -q --multipass -f src/images/ -o dist/img/ | cp {src/images/*.png,src/images/*.jpg} dist/img/",
+    "images": "svgo -q --multipass -f src/images/ -o dist/img/ && cp {src/images/*.png,src/images/*.jpg} dist/img/",
     "prebuild": "npm run clean && mkdir dist/css dist/js dist/img",
     "prebuild:css": "sass src/styles:dist/css --style=expanded --charset --source-map --embed-sources",
     "build:css": "postcss --use autoprefixer < dist/css/main.css | postcss --use cssnano --no-map > dist/css/main.min.css",
